@@ -45,6 +45,44 @@
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
       <button class="btn btn--set-names">📋Set Names</button>
+      <button class="btn btn--instructions" id="open-instructions">
+        📔 Instructions About Game
+      </button>
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1>Game Rules</h1>
+        <ul>
+          <li>
+            The goal of the game is to be the first player to reach
+            <strong>100 points</strong>.
+          </li>
+          <li>
+            On each player's turn, they can either
+            <strong>roll the dice</strong> or <strong>hold</strong>.
+          </li>
+          <li>
+            If a player rolls a number between <strong>2 and 6</strong>, that
+            number is added to their current score.
+          </li>
+          <li>
+            If a <strong>1</strong> is rolled, the current score resets to
+            <strong>0</strong> and their turn ends.
+          </li>
+          <li>
+            Holding adds the current score to the total score and ends the
+            player's turn.
+          </li>
+          <li>
+            The first player to reach <strong>100 or more points</strong> wins
+            the game!
+          </li>
+          <li>
+            Strategize carefully! Keep rolling for more points but beware of
+            losing it all by rolling a <strong>1</strong>.
+          </li>
+        </ul>
+      </div>
+      <div class="overlay hidden"></div>
     </main>
     <script src="script.js"></script>
   </body>

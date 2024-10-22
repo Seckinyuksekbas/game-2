@@ -1,6 +1,7 @@
 'use strict';
 
 //elementleri seçip tanımladım
+const btnInstruction = document.querySelector('.btn--instruction');
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 const score0El = document.getElementById('score--0');
@@ -114,4 +115,30 @@ btnSetNames.addEventListener('click', function () {
   // Inputları temizleme
   player0NameInput.style.display = 'none';
   player1NameInput.style.display = 'none';
+});
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnInstructions = document.getElementById('open-instructions');
+
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+// Talimat butonuna tıklama olayı
+btnInstructions.addEventListener('click', openModal);
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
 });
